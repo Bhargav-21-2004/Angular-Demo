@@ -1,0 +1,32 @@
+<div align="center">
+    <p> <b>Switch  Directives</b></p>
+<div col-4>
+    <button class="btn btn-primary m-3" (click) ="set(1)">Grade1</button>
+    <button class="btn btn-success m-3" (click) ="set(2)">Grade2</button>
+    <button class="btn btn-danger m-3" (click) ="set(3)">Grade3</button>
+
+<!-- </div>
+<div [ngSwitch]="grade" >
+    <div *ngSwitchCase="1"> <b>congratulations for Grade 1</b></div>
+    <div *ngSwitchCase="2"><b>congratulations for Grade2</b></div>
+    <div *ngSwitchCase="3">Try for the next Time Grade 3</div>
+    <div *ngSwitchDefault>No Match Found!</div>
+</div> -->
+<div>
+    @switch(grade){
+        @case(1){
+            Congratulations for the Grade 1
+        }
+        @case(2){
+            Congratulations for the Grade 2
+        }
+        @case(3){
+            Try for the Next Time Grade 3
+        }
+        @default{
+            No Result Found!
+        }
+    }
+</div>
+</div>
+

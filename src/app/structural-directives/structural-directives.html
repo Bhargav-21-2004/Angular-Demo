@@ -1,0 +1,37 @@
+<div align="center">
+    <p> <b>Structural Directives</b></p>
+    <div>
+        <input type="checkbox" (click)="onSubmit()"> Terms and Conditions
+        </div>
+    <div>
+        <button class="btn btn-primary  m-2" *ngIf="isCheck">Submit</button>
+    </div>
+    <!-- @if(isCheck){
+        <button class="btn btn-primary m-2 " >Submit</button>
+    } -->
+    <div>
+        <input type="text" *ngIf="isInput">
+    </div>
+<div>
+    <button class="btn btn-primary m-2"  (click)="onShow()">Show</button>
+
+    <button class="btn btn-danger m-2" (click)="onHide()">Hide</button>
+    </div>
+
+    <div >
+        <input type="text" class="m-3" [(ngModel)]="input1">
+        <input type="text" [(ngModel)]="input2">
+    </div>
+    <div *ngIf="input1 !== input2">
+        <h4>Both are not Equal</h4>
+    </div>
+    <div *ngIf="input1 === input2">
+        <h4>Both are Equal</h4>
+    </div>
+
+    <!-- @if(input1 !== input2){
+        <p>Both are Not Equal</p>
+    }@else{
+        <p>Both are Equal</p>
+    } -->
+</div>

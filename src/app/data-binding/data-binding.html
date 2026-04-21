@@ -1,0 +1,27 @@
+<p>data-binding works!</p>
+<div align="center">
+    <h3>Data Binding</h3>
+    <div>
+        <p>1.Interpolation Binding</p>
+        <p><b>{{topic}}</b>{{name}}</p>
+    </div>
+    <div>
+        <p>2.Property Binding</p>
+        <img [src]="image" alt="angular image">
+    </div>
+    <div>
+        <p>3.Event Binding</p>
+        <button (click) ="onSave()">save</button>
+        <select (change) = "onChange()">
+            <option value="Country">Country</option>
+            <option value="India">India</option>
+            <option value="Spain">Spain</option>
+            <option value="germany">Germany</option>
+        </select>
+    </div>
+    <div>
+        <p>4.Ng Model</p>
+        <input type="text" [(ngModel)]="topic">
+        {{topic}}
+    </div>
+</div>

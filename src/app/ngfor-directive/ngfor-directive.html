@@ -1,0 +1,58 @@
+<div align="center">
+    <p> <b>Ngfor  Directives</b></p>
+    <div>
+<div class="m-3">
+    <!-- <select >
+        <option [value]="emp.empId" *ngFor="let emp of employees">
+            {{emp.empName}} - {{emp.empId}}
+        </option>
+    </select> -->
+
+     <select>
+        @for(emp of employees; track emp;){
+        <option [value]="emp.empId">
+            {{emp.empName}} - {{emp.empEmail}}
+        </option>
+    }
+    </select>
+</div>
+<div class="col-4 m-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Department</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let emp of employees">
+                <td>{{emp.empName}}</td>
+                <td>{{emp.empId}}</td>
+                <td>{{emp.empDep}}</td>
+                <td>{{emp.empEmail}}</td>
+            </tr> -->
+            @for(emp of employees; track emp;){
+            <tr>
+                <td>{{emp.empName}}</td>
+                <td>{{emp.empId}}</td>
+                <td>{{emp.empDep}}</td>
+                <td>{{emp.empEmail}}</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div>
+        <!-- <ol>
+            <li *ngFor="let cmp of companies">
+                {{cmp}}
+            </li>
+        </ol> -->
+        <ol>
+        @for(cmp of companies; track cmp;){
+            <li> {{cmp}}</li>
+        }
+        </ol>
+    </div>
+</div>

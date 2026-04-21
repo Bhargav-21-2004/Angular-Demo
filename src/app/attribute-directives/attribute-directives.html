@@ -1,0 +1,34 @@
+<div align="center">
+    <p> Attribute-directives</p>
+
+    <div>
+        <h2 [ngClass]="textcolor">This is for the Attribute-Directives</h2>
+    <br>
+        <button class="btn btn-success m-3 " (click)="onChange('text-success')" >Green</button>
+        <button class="btn btn-danger m-3 " (click)="onChange('text-danger')">RED</button>
+    </div>
+    <div>
+        <h4 [ngClass]="isChange ? 'text-primary' : 'text-danger'">This is the Attribute-Directives</h4>
+        
+        <input type="checkbox" [(ngModel)]="isChange">ChangeColor
+    </div>
+    <div>
+        <h3 [ngClass]="userClass"> This is the 3rd Example for this</h3>
+        <input type="text" placeholder="Ex: text-success" [(ngModel)]="userClass"> 
+    </div>
+    <div>
+        <h2 [ngStyle]="{'color':stylecolor}">This is for ng-style the Attribute-Directives</h2>
+    <br>
+        <button class="btn btn-success m-3 " (click)="ChangeColor('orange')" >Orange</button>
+        <button class="btn btn-danger m-3 " (click)="ChangeColor('blue')">Blue</button>
+    </div>
+
+    <div>
+        <h4 [ngStyle]="{'color':isTextColor ? 'green' : 'red' }">This is the Attribute-Directives</h4>
+        
+        <input type="checkbox" [(ngModel)]="isTextColor">ChangeColor
+    </div>
+     <div>
+        <h3 [ngStyle]="customClass"> This is the 3rd Example for this</h3>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div>
+    <button class="btn btn-primary">Blue</button>
+    <button class="btn btn-success">Green</button>
+</div>
+
+<div class="shareddata">
+     @if(isEligible){
+    <h3 class="text-success">You Are Eligbile For The Premium Subscription.</h3>
+    }@else{
+        <h3 class="text-danger">You are Not Eligible for the Premium Subscription</h3>
+    }
+    <ul>
+        <li>{{serviceData.id}}</li>
+        <li>{{serviceData.name}}</li>
+        <li>{{serviceData.age}}</li>
+        <li>{{serviceData.username}}</li>
+        <li>{{serviceData.email}}</li>
+    </ul>
+</div>

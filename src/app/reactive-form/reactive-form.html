@@ -1,0 +1,72 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <h2>User Information</h2>
+
+  <div class="form-group m-2">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" placeholder="Enter First Name" formControlName="firstName">
+    <small class="text-danger" *ngIf="reactiveForm.get('firstName')?.invalid && reactiveForm.get('firstName')?.touched">
+      First Name is required
+    </small>
+  </div>
+
+  <div class="form-group m-2">
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" placeholder="Enter Last Name" formControlName="lastName">
+    <small class="text-danger" *ngIf="reactiveForm.get('lastName')?.invalid && reactiveForm.get('lastName')?.touched">
+      Last Name is required
+    </small>
+  </div>
+
+  <div class="form-group m-2">
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter Email Address" formControlName="email">
+    <small class="text-danger" *ngIf="reactiveForm.get('email')?.errors?.['required'] && reactiveForm.get('email')?.touched">
+      Email is required
+    </small>
+    <small class="text-danger" *ngIf="reactiveForm.get('email')?.errors?.['email'] && reactiveForm.get('email')?.touched">
+      Invalid email format
+    </small>
+  </div>
+
+  <div class="form-group m-2">
+    <label for="contact">Contact</label>
+    <input type="text" id="contact" placeholder="Enter Contact Number" formControlName="contact">
+    <small class="text-danger" *ngIf="reactiveForm.get('contact')?.invalid && reactiveForm.get('contact')?.touched">
+      Contact is Required
+    </small>
+  </div>
+
+  <div class="form-group m-2">
+    <input type="checkbox" formControlName="oncheck"> Check Out
+  </div>
+
+  <div class="form-group m-2">
+    <button type="button" class="btn btn-primary" (click)="AddSkill()">Add Skill</button>
+  </div>
+
+  <div formArrayName="skills" *ngIf="skills.length > 0">
+  <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i">
+    <input type="text" formControlName="skill" placeholder="Enter Skill">
+    <button type="button" (click)="onDelete(i)">Delete</button>
+  </div>
+</div>
+
+
+  <div class="form-group m-2" formGroupName="address">
+    <h2>Address</h2>
+    <label for="city">City</label>
+    <input type="text" id="city" placeholder="Enter City" formControlName="city"><br><br>
+
+    <label for="district">District</label>
+    <input type="text" id="district" placeholder="Enter District" formControlName="district"><br><br>
+
+    <label for="pincode">Pin Code</label>
+    <input type="text" id="pincode" placeholder="Enter Pincode" formControlName="pincode"><br><br>
+  </div>
+
+  <button class="btn btn-primary m-2" type="submit" [disabled]="reactiveForm.invalid">Submit</button>
+  <button class="btn btn-success m-2" type="button" (click)="onReset()">Reset</button>
+  <button type="button" class="btn btn-warning m-2" (click)="setAllValues()">setAllValues</button>
+  <button type="button" class="btn btn-warning m-2" (click)="PartialValues()">PartialValues</button>
+</form>
+

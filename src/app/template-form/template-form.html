@@ -1,0 +1,34 @@
+<div class="Container" align="center">
+    <div align="center" m-3>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <h2> User Information</h2>
+        <pre>{{userForm.invalid}}</pre>
+        <div class="form-group m-2">
+        <label for="firstname">First Name </label>
+        <input type="text" id="firstname" name="firstName" placeholder="Enter First Name" #fname="ngModel" [(ngModel)]="userObject.firstName" required><br>
+        <small class="text-danger" *ngIf="fname?.errors?.['required']">
+            First Name is required
+        </small>
+        </div>
+        <label for="lastname">Last Name </label>
+        <input type="text" id="lastname" name="lastName" placeholder="Enter Last Name"  pattern="[a-z,A-Z]+" [(ngModel)]="userObject.lastName" required><br><br>
+        <div class="form-group m-3 ">
+            <label for="email">Email </label>
+            <input type="email" id="email" name="email" placeholder="Enter Email Address" #femail="ngModel" [(ngModel)]="userObject.email" email required>
+                <small class="text-danger" *ngIf="femail?.errors?.['email']">
+                    Email is in Invalid Format</small>
+                <small class="text-danger" *ngIf="femail?.errors?.['required']">
+                    Email is required
+                </small>
+        </div>
+        <label for="contact">Contact </label>
+        <input type="text" id="contact" name="contact" placeholder="Enter Contact Number" [(ngModel)]="userObject.contact"><br><br>
+        <input type="checkbox" name="oncheck" [(ngModel)]="userObject.oncheck"> Check Out
+        <button type="submit" class="btn btn-primary m-2" [disabled]="userForm.invalid" >Submit</button>
+        <button type="button" class="btn btn-warning m-2" (click)="setValues(userForm)">setValues</button>
+        <button type="button" class="btn btn-warning m-2" (click)="PatchValues(userForm)">PatchValues</button>
+        <button type="button" class="btn btn-success m-2" (click)="onReset(userForm)">Reset</button>
+    </form>
+    </div>
+    
+</div>
