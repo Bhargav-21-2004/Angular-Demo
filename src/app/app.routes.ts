@@ -13,6 +13,9 @@ import { Signals } from './signals/signals';
 import { LinkSignals } from './link-signals/link-signals';
 import { AttributeDirectives } from './attribute-directives/attribute-directives';
 import { Profile } from './profile/profile';
+import { Crud } from './crud/crud';
+import { AddUser } from './add-user/add-user';
+import { UpdateUser } from './update-user/update-user';
 
 export const routes: Routes = [
     {path:'',component:User},
@@ -27,6 +30,9 @@ export const routes: Routes = [
     {path:'signals',component:Signals},
     {path:'Linkedsignals',component:LinkSignals},
     {path:'tdf',component:TemplateForm},
+    {path:'crud',component:Crud},
+    {path:'add-user',component:AddUser},
+    {path:'update-user/:id',component:UpdateUser},
     {path:'reactive-form',component:ReactiveForm},
     {path:'Profile-Service',component:Profile},
     {path:'**',component: PageNotFound}

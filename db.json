@@ -1,0 +1,40 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "name": "Abhi Ram",
+      "username": "Abhi",
+      "email": "adbhiram@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Abheshek Sharma",
+      "username": "Abhinav",
+      "email": "abhinav@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Jai Ram",
+      "username": "Jai",
+      "email": "jairam@gmail.com"
+    },
+    {
+      "name": "Vivek Sharma",
+      "username": "vivek",
+      "email": "viveksharma@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Ram Tej",
+      "username": "Tej",
+      "email": "ramtej@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "Adhity murali",
+      "username": "Adhitya",
+      "email": "adhity@gmail.com",
+      "id": 6
+    }
+  ]
+}

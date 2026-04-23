@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedData } from '../shared-data';
 
 @Component({
@@ -7,10 +7,11 @@ import { SharedData } from '../shared-data';
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
-export class Profile {
+export class Profile implements OnInit{
 
   dummyData : any;
 
+  apiData : any;
   isEligible:boolean;
   constructor(private sharedData: SharedData){
     this.dummyData = this.sharedData.userData;
@@ -18,4 +19,13 @@ export class Profile {
     this.isEligible = this.sharedData.isEligible();
   }
 
+  ngOnInit(): void {
+      this.getApiData();
+  }
+  getApiData(){
+    this.sharedData.getData().subscribe(res => {
+      this.apiData = res;
+    })
+  }
+  
 }

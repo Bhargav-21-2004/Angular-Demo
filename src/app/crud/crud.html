@@ -1,0 +1,41 @@
+<div class="container">
+
+<h4>
+    Crud Operation Service Api Data.
+</h4>
+</div>
+<div class="table">
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th class="col-2">Id</th>
+            <th class="col-2">Name</th>
+            <th class="col-2">UserName</th>
+            <th class="col-3">Email</th>
+            <th class="col-1">Update</th>
+            <th class="col-1">View</th>
+            <th class="col-1">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of ApiData">
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.username}}</td>
+            <td>{{data.email}}</td>
+            <td>
+                <button class="btn btn-warning" (click)="onUpdate(data.id)">Update</button>
+            </td>
+            <td>
+                <button class="btn btn-secondary">View</button>
+            </td>
+            <td>
+                <button class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="user">
+    <button class="btn btn-info" (click)="AddUser()">Add User</button>
+</div>
