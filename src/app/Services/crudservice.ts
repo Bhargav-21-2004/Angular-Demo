@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Iuser } from './iuser';
+import { Iuser } from '../iuser';
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +21,10 @@ export class CrudService {
  getDataById(id: number) {
   return this.http.get<Iuser>(`${this.apiurl}/${id}`);
 }
-putDataByID(id :number,data :Iuser){
-  return this.http.get(`${this.apiurl}/${id},data`);
+putDataByID(id :number, data :Iuser){
+  return this.http.put<Iuser>(`${this.apiurl}/${id}`,data);
 }
-
+deleteById(id:number){
+  return this.http.delete(`${this.apiurl}/${id}`);
+}
 }

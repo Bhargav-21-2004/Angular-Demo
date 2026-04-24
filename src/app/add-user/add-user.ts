@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CrudService } from '../crudservice';
+import { CrudService } from '../Services/crudservice';
 
 @Component({
   selector: 'app-add-user',

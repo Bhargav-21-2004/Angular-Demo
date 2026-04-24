@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedData } from '../shared-data';
+import { SharedData } from '../Services/shared-data';
 
 @Component({
   selector: 'app-profile',

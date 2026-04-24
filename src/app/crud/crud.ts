@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CrudService } from '../crudservice';
+import { CrudService } from '../Services/crudservice';
 import { Iuser } from '../iuser';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
@@ -31,7 +31,19 @@ export class Crud implements OnInit {
   }
 
   onUpdate(id: number){
-  this.router.navigateByUrl(`update-user/${id}`);
+  this.router.navigate(['update-user',id]);
+}
+
+onView(id:number){
+  this.router.navigate(['view-user',id]);
+}
+
+onDelete(id:number){
+  if (confirm("Do you want to delete this record?")){
+  this.apiData.deleteById(id).subscribe(res=>{
+    this.getApiData();
+  })
+}
 }
 
 }

@@ -1,7 +1,7 @@
 import { NgIf} from '@angular/common';
 import { Component } from '@angular/core';
 import { DataBinding } from '../data-binding/data-binding';
-import { SharedData } from '../shared-data';
+import { SharedData } from '../Services/shared-data';
 
 @Component({
   selector: 'app-directives',

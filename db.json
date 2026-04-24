@@ -25,16 +25,10 @@
       "id": 4
     },
     {
-      "name": "Ram Tej",
-      "username": "Tej",
-      "email": "ramtej@gmail.com",
-      "id": 5
-    },
-    {
       "name": "Adhity murali",
       "username": "Adhitya",
       "email": "adhity@gmail.com",
-      "id": 6
+      "id": 5
     }
   ]
 }

@@ -16,6 +16,9 @@ import { Profile } from './profile/profile';
 import { Crud } from './crud/crud';
 import { AddUser } from './add-user/add-user';
 import { UpdateUser } from './update-user/update-user';
+import { ViewUser } from './view-user/view-user';
+import { resource } from '@angular/core';
+import { Resource } from './resource/resource';
 
 export const routes: Routes = [
     {path:'',component:User},
@@ -33,7 +36,9 @@ export const routes: Routes = [
     {path:'crud',component:Crud},
     {path:'add-user',component:AddUser},
     {path:'update-user/:id',component:UpdateUser},
-    {path:'reactive-form',component:ReactiveForm},
+    {path:'view-user/:id',component:ViewUser},
+    {path:'reactive-form',component:ReactiveForm},    
+    {path:'resource',component:Resource},    
     {path:'Profile-Service',component:Profile},
     {path:'**',component: PageNotFound}
 ];

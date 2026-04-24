@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { CrudService } from '../crudservice';
+import { CrudService } from '../Services/crudservice';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
@@ -30,7 +30,6 @@ export class UpdateUser implements OnInit {
     userId: { uid: number } = { uid: 0 };
 
     userData : any;
-   
 
   ngOnInit(): void {
 
@@ -48,6 +47,8 @@ export class UpdateUser implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.updateUserForm.value);
-  }
+    this.crud.putDataByID(this.userId.uid,this.updateUserForm.value).subscribe(res => {
+      this.router.navigateByUrl('crud');
+    })
+    }
 }
